@@ -2,9 +2,12 @@
   --backgroung-color: rgba(233, 206, 255, 0.6);
   --primary-color: #9b00b5;
   --heading-font-family: "Cormorant SC", serif;
+  --main-background-color: #f9f7fe;
+  --box-shadow: 1px 6px 15px rgba(0, 0, 0, 0.25);
 }
 body {
   font-family: "Taviraj", serif;
+  background-color: var(--main-background-color);
 }
 h1,
 h2,
@@ -14,6 +17,9 @@ h5,
 h6 {
   color: black;
   font-family: var(--heading-font-family);
+}
+p {
+  line-height: 30px;
 }
 h1 {
   font-size: 96px;
@@ -30,11 +36,65 @@ h1 {
   background-color: var(--backgroung-color);
   text-align: center;
   padding: 160px;
+  line-height: 1.5;
 }
 .main-page-button {
   background-color: var(--primary-color);
   color: white;
   padding: 16px 20px;
   border-radius: 25px;
-  box-shadow: 1px 6px 15px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--box-shadow);
+}
+.join-text {
+  font-size: 20px;
+  padding-bottom: 50px;
+}
+.project-heading {
+  font-size: 48px;
+}
+.btn-primary {
+  padding: 16px 44px;
+  background-color: rgb(255, 255, 255);
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 25px;
+  font-size: 18px;
+  box-shadow: var(--box-shadow);
+}
+img {
+  border-radius: 6px;
+}
+.project-description {
+  padding: 70px 30px;
+}
+.project-description-tennis {
+  padding: 120px 30px;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    padding: 170px 0 150px 0;
+  }
+  .hi-text {
+    font-size: 24px;
+  }
+  h1 {
+    font-size: 50px;
+  }
+  .project-heading {
+    font-size: 40px;
+  }
+  .text-muted {
+    font-size: 16px;
+  }
+  .front-end-text {
+    font-size: 20px;
+  }
+  .join-text {
+    padding-bottom: 0;
+  }
+  .project-description {
+    padding: 0;
+    text-align: center;
+  }
 }
