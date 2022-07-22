@@ -1,5 +1,5 @@
 :root {
-  --backgroung-color: rgba(233, 206, 255, 0.6);
+  --background-color: rgba(233, 206, 255, 0.6);
   --primary-color: #9b00b5;
   --heading-font-family: "Cormorant SC", serif;
   --main-background-color: #f9f7fe;
@@ -20,7 +20,6 @@ h6 {
 }
 p {
   line-height: 30px;
-  font-family: "Taviraj", serif;
 }
 h1 {
   font-size: 96px;
@@ -35,7 +34,7 @@ h1 {
   line-height: 2;
 }
 .hero {
-  background-color: var(--backgroung-color);
+  background-color: var(--background-color);
   text-align: center;
   padding: 160px;
   line-height: 1.5;
