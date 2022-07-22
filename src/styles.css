@@ -20,6 +20,7 @@ h6 {
 }
 p {
   line-height: 30px;
+  font-family: "Taviraj", serif;
 }
 h1 {
   font-size: 96px;
@@ -86,6 +87,17 @@ img {
 .about-me-sec p {
   margin-bottom: 70px;
 }
+.project-main-text {
+  font-size: 64px;
+  margin-top: 150px;
+}
+.projects-sec {
+  font-weight: 700;
+  font-size: 35px;
+}
+.par {
+  font-size: 18px;
+}
 
 @media (max-width: 900px) {
   .hero {
@@ -123,5 +135,8 @@ img {
   .about-sec {
     text-align: center;
     padding: 100px 0 0 0;
+  }
+  .project-main-text {
+    font-size: 50px;
   }
 }
