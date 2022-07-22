@@ -9,12 +9,7 @@ body {
   font-family: "Taviraj", serif;
   background-color: var(--main-background-color);
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1 {
   color: black;
   font-family: var(--heading-font-family);
 }
@@ -97,6 +92,22 @@ img {
 .par {
   font-size: 18px;
 }
+.contact-heading {
+  font-family: "Taviraj", serif;
+  font-weight: bold;
+  font-size: 64px;
+  margin: 120px 0 0 150px;
+}
+.link-row p {
+  font-size: 20px;
+  margin: 10px 10px 10px 0;
+}
+.link-row a {
+  font-size: 16px;
+}
+.link-row {
+  margin-top: 100px;
+}
 
 @media (max-width: 900px) {
   .hero {
@@ -136,6 +147,11 @@ img {
     padding: 100px 0 0 0;
   }
   .project-main-text {
+    font-size: 50px;
+  }
+  .contact-heading {
+    margin: 100px 0 50px 0;
+    text-align: center;
     font-size: 50px;
   }
 }
