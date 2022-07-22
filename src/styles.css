@@ -28,6 +28,7 @@ h1 {
   font-size: 54px;
   margin: 0;
 }
+
 .front-end-text {
   font-size: 24px;
   line-height: 2;
@@ -70,6 +71,21 @@ img {
 .project-description-tennis {
   padding: 120px 30px;
 }
+.about-sec h1 {
+  font-size: 64px;
+}
+.about-sec img {
+  height: 544px;
+}
+.about-sec {
+  padding-top: 100px;
+}
+.about-me-sec {
+  padding: 70px 100px 0 0;
+}
+.about-me-sec p {
+  margin-bottom: 70px;
+}
 
 @media (max-width: 900px) {
   .hero {
@@ -96,5 +112,16 @@ img {
   .project-description {
     padding: 0;
     text-align: center;
+  }
+  .about-sec h1 {
+    font-size: 50px;
+  }
+  .about-me-sec {
+    text-align: center;
+    padding: 0;
+  }
+  .about-sec {
+    text-align: center;
+    padding: 100px 0 0 0;
   }
 }
