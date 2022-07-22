@@ -108,6 +108,42 @@ img {
 .link-row {
   margin-top: 100px;
 }
+.logo {
+  max-height: 32px;
+}
+nav li {
+  display: inline;
+  list-style: none;
+  margin-left: 10px;
+}
+nav ul {
+  padding: 0;
+  margin: 0;
+  padding-top: 12px;
+}
+.container-sec {
+  display: flex;
+  justify-content: space-between;
+}
+nav img {
+  border-radius: 0;
+}
+nav {
+  background-color: #e9ceff;
+  padding: 20px 0;
+}
+nav a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+nav .active-link,
+nav a:hover {
+  color: var(--primary-color);
+}
+.fs-1 {
+  margin: 10px 0 0;
+}
 
 @media (max-width: 900px) {
   .hero {
@@ -153,5 +189,8 @@ img {
     margin: 100px 0 50px 0;
     text-align: center;
     font-size: 50px;
+  }
+  nav a {
+    font-size: 16px;
   }
 }
