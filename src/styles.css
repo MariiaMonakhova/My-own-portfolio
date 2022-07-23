@@ -114,7 +114,7 @@ img {
 nav li {
   display: inline;
   list-style: none;
-  margin-left: 10px;
+  margin-left: 20px;
 }
 nav ul {
   padding: 0;
@@ -127,6 +127,7 @@ nav ul {
 }
 nav img {
   border-radius: 0;
+  margin-top: 3px;
 }
 nav {
   background-color: #e9ceff;
@@ -143,6 +144,50 @@ nav a:hover {
 }
 .fs-1 {
   margin: 10px 0 0;
+}
+
+.email-link {
+  text-decoration: none;
+  color: black;
+  font-size: 22px;
+}
+.mail {
+  text-align: center;
+}
+.icons {
+  text-align: center;
+  font-size: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.icons i {
+  margin: 10px;
+  color: var(--primary-color);
+  background-color: white;
+  padding: 14px 16px;
+  border-radius: 30px;
+}
+footer p a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+footer p a:hover {
+  color: rgb(175, 175, 255);
+}
+
+footer h1 {
+  font-size: 64px;
+}
+footer .row {
+  padding: 35px;
+  background: var(--background-color);
+  border-radius: 10px;
+}
+footer .col-md-2 {
+  text-align: center;
+}
+.col-md-2 a {
+  margin-top: 12px;
 }
 
 @media (max-width: 900px) {
@@ -192,5 +237,26 @@ nav a:hover {
   }
   nav a {
     font-size: 16px;
+  }
+  .email-link {
+    font-size: 18px;
+  }
+  .icons {
+    font-size: 26px;
+  }
+  footer h1 {
+    font-size: 40px;
+    margin-top: 20px;
+  }
+  footer .row {
+    padding: 10px;
+  }
+  footer .col-md-2 a {
+    padding: 10px;
+  }
+}
+@media (max-width: 767px) {
+  footer h1 {
+    text-align: center;
   }
 }
