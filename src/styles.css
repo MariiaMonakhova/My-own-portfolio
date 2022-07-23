@@ -83,7 +83,7 @@ img {
 }
 .project-main-text {
   font-size: 64px;
-  margin-top: 150px;
+  margin-top: 100px;
 }
 .projects-sec {
   font-weight: 700;
@@ -188,6 +188,9 @@ footer .col-md-2 {
 }
 .col-md-2 a {
   margin-top: 12px;
+}
+.contact-box-contact {
+  margin-top: 80px;
 }
 
 @media (max-width: 900px) {
