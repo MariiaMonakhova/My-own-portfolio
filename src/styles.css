@@ -192,6 +192,9 @@ footer .col-md-2 {
 .contact-box-contact {
   margin-top: 80px;
 }
+.contact-page-links {
+  margin-left: 100px;
+}
 
 @media (max-width: 900px) {
   .hero {
@@ -256,6 +259,9 @@ footer .col-md-2 {
   }
   footer .col-md-2 a {
     padding: 10px;
+  }
+  .contact-page-links {
+    margin-left: 20px;
   }
 }
 @media (max-width: 767px) {
