@@ -41,6 +41,11 @@ h1 {
   border-radius: 25px;
   box-shadow: var(--box-shadow);
 }
+.main-page-button:hover {
+  color: white;
+  background-color: #6e0081;
+  transition: all 200ms ease-in-out;
+}
 .join-text {
   font-size: 20px;
   padding-bottom: 50px;
@@ -56,6 +61,11 @@ h1 {
   border-radius: 25px;
   font-size: 18px;
   box-shadow: var(--box-shadow);
+}
+.btn-primary:hover {
+  background: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  transition: all 200ms ease-in-out;
 }
 img {
   border-radius: 6px;
@@ -151,6 +161,9 @@ nav a:hover {
   color: black;
   font-size: 22px;
 }
+.email-link:hover {
+  color: rgb(144, 144, 255);
+}
 .mail {
   text-align: center;
 }
@@ -167,12 +180,15 @@ nav a:hover {
   padding: 14px 16px;
   border-radius: 30px;
 }
+.icons i:hover {
+  color: #6e0081;
+}
 footer p a {
   color: var(--primary-color);
   text-decoration: none;
 }
 footer p a:hover {
-  color: rgb(175, 175, 255);
+  color: rgb(144, 144, 255);
 }
 
 footer h1 {
@@ -194,6 +210,14 @@ footer .col-md-2 {
 }
 .contact-page-links {
   margin-left: 100px;
+}
+.contact-page-links a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-size: 20px;
+}
+.contact-page-links a:hover {
+  color: rgb(144, 144, 255);
 }
 
 @media (max-width: 900px) {
