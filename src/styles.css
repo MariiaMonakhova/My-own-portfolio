@@ -1,8 +1,10 @@
 :root {
-  --background-color: rgba(233, 206, 255, 0.6);
-  --primary-color: #9b00b5;
+  --background-color: white;
+  --primary-color: #dd8442;
+  --secondary-color: #9f548e;
+  --main-gradient: linear-gradient(90deg, #dd8442 0%, #a75a8d 93.23%);
   --heading-font-family: "Cormorant SC", serif;
-  --main-background-color: #f9f7fe;
+  --main-background-color: #fffdff;
   --box-shadow: 1px 6px 15px rgba(0, 0, 0, 0.25);
 }
 body {
@@ -35,16 +37,16 @@ h1 {
   line-height: 1.5;
 }
 .main-page-button {
-  background-color: var(--primary-color);
+  background: var(--main-gradient);
   color: white;
   padding: 16px 20px;
   border-radius: 25px;
   box-shadow: var(--box-shadow);
 }
 .main-page-button:hover {
+  background: linear-gradient(90deg, #a75a8d 0%, #dd8442 100%);
   color: white;
-  background-color: #6e0081;
-  transition: all 200ms ease-in-out;
+  transition: all 1000ms ease-in-out;
 }
 .join-text {
   font-size: 20px;
@@ -142,7 +144,7 @@ nav img {
 }
 nav {
   background-color: white;
-  padding: 10px 0;
+  padding: 15px 0 10px 0;
 }
 nav a {
   text-decoration: none;
@@ -163,7 +165,7 @@ nav a:hover {
   font-size: 22px;
 }
 .email-link:hover {
-  color: rgb(144, 144, 255);
+  color: #6a35f6;
 }
 .mail {
   text-align: center;
@@ -182,14 +184,14 @@ nav a:hover {
   border-radius: 30px;
 }
 .icons i:hover {
-  color: #6e0081;
+  color: var(--secondary-color);
 }
 footer p a {
   color: var(--primary-color);
   text-decoration: none;
 }
 footer p a:hover {
-  color: rgb(144, 144, 255);
+  color: #6a35f6;
 }
 
 footer h1 {
