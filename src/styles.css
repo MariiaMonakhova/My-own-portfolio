@@ -105,7 +105,7 @@ img {
   font-size: 18px;
 }
 .contact-heading {
-  font-family: "Taviraj", serif;
+  font-family: var(--heading-font-family);
   font-weight: bold;
   font-size: 64px;
   margin: 120px 0 0 150px;
