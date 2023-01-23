@@ -55,7 +55,7 @@ h1 {
 .project-heading {
   font-size: 48px;
 }
-.btn-primary {
+.btn-light {
   padding: 16px 44px;
   background-color: rgb(255, 255, 255);
   color: var(--primary-color);
@@ -64,7 +64,7 @@ h1 {
   font-size: 18px;
   box-shadow: var(--box-shadow);
 }
-.btn-primary:hover {
+.btn-light:hover {
   background: var(--primary-color);
   border: 2px solid var(--primary-color);
   transition: all 200ms ease-in-out;
@@ -100,6 +100,7 @@ img {
 .projects-sec {
   font-weight: 700;
   font-size: 35px;
+  font-family: var(--heading-font-family);
 }
 .par {
   font-size: 18px;
