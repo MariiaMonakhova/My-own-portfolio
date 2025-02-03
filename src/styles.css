@@ -43,6 +43,10 @@ h1 {
   line-height: 1.5;
 }
 
+.hero a {
+  border: none
+}
+
 .main-page-button {
   background: var(--main-gradient);
   color: white;
