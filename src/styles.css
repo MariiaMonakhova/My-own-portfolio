@@ -7,20 +7,25 @@
   --main-background-color: #fffdff;
   --box-shadow: 1px 6px 15px rgba(0, 0, 0, 0.25);
 }
+
 body {
   font-family: "Taviraj", serif;
   background-color: var(--main-background-color);
 }
+
 h1 {
   color: black;
   font-family: var(--heading-font-family);
 }
+
 p {
   line-height: 30px;
 }
+
 h1 {
   font-size: 96px;
 }
+
 .hi-text {
   font-size: 54px;
   margin: 0;
@@ -30,12 +35,14 @@ h1 {
   font-size: 24px;
   line-height: 2;
 }
+
 .hero {
   background-color: var(--background-color);
   text-align: center;
   padding: 160px;
   line-height: 1.5;
 }
+
 .main-page-button {
   background: var(--main-gradient);
   color: white;
@@ -44,17 +51,25 @@ h1 {
   box-shadow: var(--box-shadow);
   transition: all 300ms ease-in-out;
 }
+
 .main-page-button:hover {
   background: linear-gradient(90deg, #a75a8d 0%, #dd8442 100%);
   color: white;
 }
+
 .join-text {
   font-size: 20px;
   padding-bottom: 50px;
 }
+
 .project-heading {
   font-size: 48px;
 }
+
+.row {
+  align-items: center;
+}
+
 .btn-main-button {
   padding: 16px 44px;
   background-color: rgb(255, 255, 255);
@@ -65,100 +80,115 @@ h1 {
   box-shadow: var(--box-shadow);
   transition: all 300ms ease-in-out;
 }
+
 .btn-main-button:hover {
   background: var(--primary-color);
   color: white;
   border: 2px solid var(--primary-color);
 }
+
 img {
   border-radius: 6px;
 }
-.project-description {
-  padding: 70px 30px;
+
+.project-image img {
+  height: 100%;
+  width: 100%;
 }
-.project-description-tennis {
-  padding: 120px 30px;
-}
-.about-sec h1 {
-  font-size: 64px;
-}
-.about-sec img {
-  height: 544px;
-}
-.about-sec {
-  padding-top: 50px;
-}
+
 .about-me-sec {
   padding: 70px 100px 0 0;
 }
+
 .about-me-sec p {
   margin-bottom: 70px;
 }
+
 .project-main-text {
   font-size: 64px;
   margin-top: 100px;
 }
+
 .projects-sec {
   font-weight: 700;
   font-size: 35px;
   font-family: var(--heading-font-family);
 }
+
 .par {
   font-size: 18px;
 }
+
 .contact-heading {
   font-family: var(--heading-font-family);
   font-weight: bold;
   font-size: 64px;
   margin: 120px 0 0 150px;
 }
+
 .link-row p {
   font-size: 20px;
   margin: 10px 10px 10px 0;
 }
+
 .link-row a {
   font-size: 16px;
 }
+
 .link-row {
   margin-top: 100px;
+  overflow: hidden;
 }
+
 .logo {
   height: 50px;
   width: 50px;
 }
+
 nav li {
   display: inline;
   list-style: none;
   margin-left: 20px;
 }
+
 nav ul {
   padding: 0;
   margin: 0;
   padding-top: 12px;
 }
+
 .container-sec {
   display: flex;
   justify-content: space-between;
 }
+
 nav img {
   border-radius: 0;
   margin-top: 3px;
 }
+
 nav {
   background-color: white;
   padding: 15px 0 10px 0;
 }
+
 nav a {
   text-decoration: none;
   color: black;
   font-size: 18px;
 }
+
 nav .active-link,
 nav a:hover {
   color: var(--primary-color);
 }
+
 .fs-1 {
   margin: 10px 0 0;
+}
+
+.contact-box a {
+  border: none;
 }
 
 .email-link {
@@ -166,18 +196,22 @@ nav a:hover {
   color: black;
   font-size: 22px;
 }
+
 .email-link:hover {
   color: #6a35f6;
 }
+
 .mail {
   text-align: center;
 }
+
 .icons {
   text-align: center;
   font-size: 30px;
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
 .icons i {
   margin: 10px;
   color: var(--primary-color);
@@ -185,13 +219,20 @@ nav a:hover {
   padding: 14px 16px;
   border-radius: 30px;
 }
+
 .icons i:hover {
   color: var(--secondary-color);
 }
+
+footer {
+  overflow: hidden;
+}
+
 footer p a {
   color: var(--primary-color);
   text-decoration: none;
 }
+
 footer p a:hover {
   color: #6a35f6;
 }
@@ -199,28 +240,35 @@ footer p a:hover {
 footer h1 {
   font-size: 64px;
 }
+
 footer .row {
   padding: 35px;
   background: var(--background-color);
   border-radius: 10px;
 }
+
 footer .col-md-2 {
   text-align: center;
 }
+
 .col-md-2 a {
   margin-top: 12px;
 }
+
 .contact-box-contact {
   margin-top: 80px;
 }
+
 .contact-page-links {
   margin-left: 100px;
 }
+
 .contact-page-links a {
   text-decoration: none;
   color: var(--primary-color);
   font-size: 20px;
 }
+
 .contact-page-links a:hover {
   color: rgb(144, 144, 255);
 }
@@ -229,72 +277,94 @@ footer .col-md-2 {
   .hero {
     padding: 170px 0 150px 0;
   }
+
   .hi-text {
     font-size: 24px;
   }
+
   h1 {
     font-size: 50px;
   }
+
   .project-heading {
     font-size: 40px;
   }
+
   .text-muted {
     font-size: 16px;
   }
+
   .full-stack-text {
     font-size: 20px;
   }
+
   .join-text {
     padding-bottom: 0;
   }
+
   .project-description {
-    padding: 0;
     text-align: center;
   }
-  .about-sec h1 {
-    font-size: 50px;
+
+  .about {
+    margin-top: 80px !important;
   }
+
   .about-me-sec {
     text-align: center;
     padding: 0;
   }
-  .about-sec {
-    text-align: center;
-    padding: 100px 0 0 0;
-  }
+
   .project-main-text {
     font-size: 50px;
   }
+
   .contact-heading {
     margin: 100px 0 50px 0;
     text-align: center;
     font-size: 50px;
   }
+
   nav a {
     font-size: 16px;
   }
+
   .email-link {
     font-size: 18px;
   }
+
   .icons {
     font-size: 26px;
   }
+
   footer h1 {
     font-size: 40px;
     margin-top: 20px;
   }
+
   footer .row {
     padding: 10px;
   }
+
   footer .col-md-2 a {
     padding: 10px;
   }
+
   .contact-page-links {
     margin-left: 20px;
   }
 }
+
 @media (max-width: 767px) {
   footer h1 {
     text-align: center;
+  }
+
+  .about-me-img {
+    padding: 0;
+  }
+
+  .about {
+    margin-top: 80px;
   }
 }
