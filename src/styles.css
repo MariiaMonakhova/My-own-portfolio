@@ -1047,7 +1047,11 @@ code {
   position: relative;
   flex: 0 0 100%;
   aspect-ratio: 4 / 5;
-  background: linear-gradient(135deg, #efdce6, #e3d6f1);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--pink) 18%, var(--bg-soft)),
+    color-mix(in srgb, var(--lavender) 18%, var(--bg-soft))
+  );
   overflow: hidden;
 }
 
@@ -1082,10 +1086,11 @@ code {
   display: grid;
   place-items: center;
   font-size: clamp(4rem, 12vw, 8rem);
-  color: rgba(108, 70, 110, 0.22);
+  color: color-mix(in srgb, var(--ink) 20%, transparent);
   background:
-    radial-gradient(30rem 30rem at 30% 20%, rgba(216, 143, 170, 0.35), transparent 60%),
-    radial-gradient(30rem 30rem at 80% 90%, rgba(169, 143, 214, 0.4), transparent 60%);
+    radial-gradient(30rem 30rem at 30% 20%, color-mix(in srgb, var(--pink) 38%, transparent), transparent 60%),
+    radial-gradient(30rem 30rem at 80% 90%, color-mix(in srgb, var(--lavender) 42%, transparent), transparent 60%),
+    var(--bg-soft);
 }
 
 /* When a photo is missing, hide the img + blurred fill and show the fallback */

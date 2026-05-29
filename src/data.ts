@@ -17,8 +17,6 @@ import tennis1 from "../images/sports/tennis-1.jpg";
 import tennis2 from "../images/sports/tennis-2.jpg";
 import tennis3 from "../images/sports/tennis-3.jpg";
 import yoga1 from "../images/sports/yoga-1.jpg";
-import yoga2 from "../images/sports/yoga-2.jpg";
-import yoga3 from "../images/sports/yoga-3.jpg";
 import yoga4 from "../images/sports/yoga-4.jpg";
 import yoga5 from "../images/sports/yoga-5.jpg";
 import yoga6 from "../images/sports/yoga-6.jpg";
@@ -186,7 +184,7 @@ export interface SportSlide {
   /** Font Awesome icon shown on the slide / fallback */
   icon: string;
   /** Drop your photos into images/sports/ to replace the placeholders */
-  image: string;
+  image: string | null;
 }
 
 export const sportSlides: SportSlide[] = [
@@ -216,7 +214,7 @@ export const sportSlides: SportSlide[] = [
     caption:
       "Finding stillness in movement — the practice that resets my mind between deep-work sessions.",
     icon: "fa-solid fa-spa",
-    image: yoga2,
+    image: null,
   },
   {
     title: "Coaching Tennis",
@@ -230,7 +228,7 @@ export const sportSlides: SportSlide[] = [
     caption:
       "Strength, breath and balance — yoga is where I recharge the energy I bring to building.",
     icon: "fa-solid fa-spa",
-    image: yoga3,
+    image: null,
   },
   {
     title: "Practice",

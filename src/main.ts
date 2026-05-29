@@ -103,20 +103,26 @@ function setupCarousel(): void {
   sportSlides.forEach((slide, i) => {
     const item = el("div", "slide");
 
-    const fallback = `<div class="slide__fallback"><i class="${slide.icon}"></i></div>`;
+    const media = slide.image
+      ? `<div class="slide__bg" style="background-image:url('${slide.image}')"></div>
+         <img class="slide__img" src="${slide.image}" alt="${slide.title}" loading="lazy" />`
+      : "";
     item.innerHTML = `
-      ${fallback}
-      <div class="slide__bg" style="background-image:url('${slide.image}')"></div>
-      <img class="slide__img" src="${slide.image}" alt="${slide.title}" loading="lazy" />
+      <div class="slide__fallback"><i class="${slide.icon}"></i></div>
+      ${media}
       <div class="slide__overlay">
         <span class="slide__badge"><i class="${slide.icon}"></i> ${slide.title}</span>
         <p>${slide.caption}</p>
       </div>`;
 
-    // If the photo is missing, gracefully fall back to the icon panel.
-    const img = item.querySelector<HTMLImageElement>(".slide__img")!;
-    img.addEventListener("error", () => item.classList.add("slide--no-img"));
-    if (img.complete && img.naturalWidth === 0) item.classList.add("slide--no-img");
+    // No photo (or it fails to load) → gracefully fall back to the icon panel.
+    if (!slide.image) {
+      item.classList.add("slide--no-img");
+    } else {
+      const img = item.querySelector<HTMLImageElement>(".slide__img")!;
+      img.addEventListener("error", () => item.classList.add("slide--no-img"));
+      if (img.complete && img.naturalWidth === 0) item.classList.add("slide--no-img");
+    }
 
     track.appendChild(item);
 
@@ -327,9 +333,36 @@ function setupTheme(): void {
   const valid = new Set(themes.map((t) => t.key));
   const bgFor = (key: string): string => themes.find((t) => t.key === key)?.swatch[0] ?? "#f5efe8";
 
+  // Build an "M" favicon coloured with the theme's gradient.
+  const faviconHref = (key: string): string => {
+    const t = themes.find((x) => x.key === key);
+    const c1 = t?.swatch[1] ?? "#c89bd6";
+    const c2 = t?.swatch[2] ?? "#a98fd6";
+    const mark = key === "femmefatale" ? "#ffffff" : "#2a1f2e";
+    const svg =
+      `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>` +
+      `<defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'>` +
+      `<stop offset='0' stop-color='${c1}'/><stop offset='1' stop-color='${c2}'/>` +
+      `</linearGradient></defs>` +
+      `<rect width='100' height='100' rx='24' fill='url(#g)'/>` +
+      `<text x='50' y='52' font-family='Arial,Helvetica,sans-serif' font-size='66' ` +
+      `font-weight='800' fill='${mark}' text-anchor='middle' dominant-baseline='central'>M</text>` +
+      `</svg>`;
+    return "data:image/svg+xml," + encodeURIComponent(svg);
+  };
+
+  const setFavicon = (href: string): void => {
+    document.querySelectorAll('link[rel="icon"]').forEach((n) => n.remove());
+    const link = document.createElement("link");
+    link.rel = "icon";
+    link.href = href;
+    document.head.appendChild(link);
+  };
+
   const apply = (key: string): void => {
     root.setAttribute("data-theme", key);
     if (meta) meta.content = bgFor(key);
+    setFavicon(faviconHref(key));
     container?.querySelectorAll<HTMLElement>(".theme-dot").forEach((b) => {
       const active = b.dataset.themeKey === key;
       b.classList.toggle("is-active", active);
