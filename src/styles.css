@@ -39,11 +39,17 @@
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* ---------- Dark theme ---------- */
-[data-theme="dark"] {
-  --bg: #0f0b16;          /* near-black, purple-tinted */
+/* ==================================================================
+   ALTER EGO THEMES
+   :root above is the default "Daydream" (pink + lavender). Each theme
+   below is just a palette — every component reads these variables.
+   ================================================================== */
+
+/* 🌙 Midnight — near-black purple with pink + lavender accents */
+[data-theme="midnight"] {
+  --bg: #0f0b16;
   --bg-soft: #171022;
-  --ink: #f2ecf6;         /* light headings */
+  --ink: #f2ecf6;
   --surface: rgba(255, 255, 255, 0.045);
   --surface-2: rgba(255, 255, 255, 0.07);
   --border: rgba(255, 255, 255, 0.1);
@@ -54,24 +60,130 @@
   --faint: #746b85;
 
   --pink: #e3a0bb;
-  --pink-strong: #e7a3c0; /* lighter for contrast on dark */
+  --pink-strong: #e7a3c0;
   --lavender: #b69ce6;
+  --highlight: #c9b6ef;
   --raise: rgba(255, 255, 255, 0.08);
   --menu-bg: rgba(20, 14, 30, 0.97);
 
+  --grad: linear-gradient(100deg, #e4a7bd 0%, #c89bd6 48%, #b69ce6 100%);
+  --grad-soft: linear-gradient(100deg, rgba(228, 167, 189, 0.16), rgba(182, 156, 230, 0.18));
   --shadow: 0 28px 60px -26px rgba(0, 0, 0, 0.75);
   --shadow-glow: 0 16px 42px -16px rgba(190, 130, 170, 0.5);
 }
 
-/* The big hero wordmark uses dark ink in light mode — flip it for dark */
-[data-theme="dark"] .hero__name {
+/* 🍷 Femme Fatale — dramatic dark red / oxblood */
+[data-theme="femmefatale"] {
+  --bg: #1a0a0e;
+  --bg-soft: #250f15;
+  --ink: #fbe9ec;
+  --surface: rgba(255, 255, 255, 0.05);
+  --surface-2: rgba(255, 255, 255, 0.08);
+  --border: rgba(255, 255, 255, 0.1);
+  --border-strong: rgba(255, 255, 255, 0.2);
+
+  --text: #f0dadd;
+  --muted: #c098a0;
+  --faint: #8a5d65;
+
+  --pink: #e2566a;
+  --pink-strong: #ff6f81;
+  --lavender: #b8324e;
+  --highlight: #3a1620;
+  --raise: rgba(255, 255, 255, 0.09);
+  --menu-bg: rgba(28, 11, 16, 0.97);
+
+  --grad: linear-gradient(100deg, #ff7a6e 0%, #e2566a 45%, #a8324e 100%);
+  --grad-soft: linear-gradient(100deg, rgba(226, 86, 106, 0.22), rgba(168, 50, 78, 0.24));
+  --shadow: 0 28px 60px -26px rgba(0, 0, 0, 0.8);
+  --shadow-glow: 0 16px 42px -16px rgba(226, 86, 106, 0.55);
+}
+
+/* 🌊 Tidal — fresh watery aqua + ocean blue */
+[data-theme="tidal"] {
+  --bg: #e9f5f6;
+  --bg-soft: #d7ecee;
+  --ink: #0e2e38;
+  --surface: rgba(255, 255, 255, 0.55);
+  --surface-2: rgba(255, 255, 255, 0.82);
+  --border: rgba(14, 46, 56, 0.1);
+  --border-strong: rgba(14, 46, 56, 0.18);
+
+  --text: #143a44;
+  --muted: #5b7d85;
+  --faint: #93b1b6;
+
+  --pink: #2bb6c4;
+  --pink-strong: #1796a8;
+  --lavender: #4f8fd6;
+  --highlight: #cdeaee;
+  --raise: #ffffff;
+  --menu-bg: rgba(233, 245, 246, 0.97);
+
+  --grad: linear-gradient(100deg, #4fd1d9 0%, #2bb6c4 45%, #4f8fd6 100%);
+  --grad-soft: linear-gradient(100deg, rgba(43, 182, 196, 0.18), rgba(79, 143, 214, 0.2));
+  --shadow: 0 24px 55px -28px rgba(20, 80, 100, 0.4);
+  --shadow-glow: 0 16px 42px -16px rgba(43, 182, 196, 0.5);
+}
+
+/* 🎋 Zen Garden — calm, modern, bamboo greens on rice paper */
+[data-theme="zengarden"] {
+  --bg: #f1f0e7;
+  --bg-soft: #e6e6d7;
+  --ink: #2b2f26;
+  --surface: rgba(255, 255, 255, 0.5);
+  --surface-2: rgba(255, 255, 255, 0.8);
+  --border: rgba(43, 47, 38, 0.1);
+  --border-strong: rgba(43, 47, 38, 0.18);
+
+  --text: #3a3f33;
+  --muted: #6e7363;
+  --faint: #a4a892;
+
+  --pink: #7a9b6e;        /* bamboo green */
+  --pink-strong: #5c7e50;
+  --lavender: #c0895e;    /* warm wood / clay */
+  --highlight: #dfe3cf;
+  --raise: #ffffff;
+  --menu-bg: rgba(241, 240, 231, 0.97);
+
+  --grad: linear-gradient(100deg, #9bbf7e 0%, #7a9b6e 50%, #5c7e50 100%);
+  --grad-soft: linear-gradient(100deg, rgba(122, 155, 110, 0.18), rgba(192, 137, 94, 0.18));
+  --shadow: 0 24px 55px -28px rgba(60, 70, 40, 0.35);
+  --shadow-glow: 0 16px 42px -16px rgba(122, 155, 110, 0.45);
+}
+
+/* The hero wordmark uses dark ink by default — flip / retint per theme */
+[data-theme="midnight"] .hero__name {
   background: linear-gradient(120deg, #ffffff 18%, #d9cfe8 50%, #ffffff 82%);
   -webkit-background-clip: text;
   background-clip: text;
 }
 
-[data-theme="dark"] .nav.is-scrolled {
+[data-theme="femmefatale"] .hero__name {
+  background: linear-gradient(120deg, #ffffff 18%, #ffd9de 50%, #ffffff 82%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+[data-theme="tidal"] .hero__name {
+  background: linear-gradient(120deg, #0e2e38 12%, #1f7c8a 50%, #0e2e38 88%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+[data-theme="zengarden"] .hero__name {
+  background: linear-gradient(120deg, #2b2f26 12%, #5c7e50 50%, #2b2f26 88%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+[data-theme="midnight"] .nav.is-scrolled {
   background: rgba(15, 11, 22, 0.72);
+}
+
+[data-theme="femmefatale"] .nav.is-scrolled {
+  background: rgba(26, 10, 14, 0.72);
 }
 
 /* ---------- Reset ---------- */
@@ -103,9 +215,9 @@ body::before {
   inset: 0;
   z-index: -2;
   background:
-    radial-gradient(45rem 45rem at 12% -10%, rgba(216, 143, 170, 0.22), transparent 60%),
-    radial-gradient(40rem 40rem at 100% 8%, rgba(169, 143, 214, 0.24), transparent 55%),
-    radial-gradient(50rem 50rem at 50% 110%, rgba(236, 212, 224, 0.5), transparent 60%);
+    radial-gradient(45rem 45rem at 12% -10%, color-mix(in srgb, var(--pink) 24%, transparent), transparent 60%),
+    radial-gradient(40rem 40rem at 100% 8%, color-mix(in srgb, var(--lavender) 26%, transparent), transparent 55%),
+    radial-gradient(50rem 50rem at 50% 110%, color-mix(in srgb, var(--highlight) 55%, transparent), transparent 60%);
 }
 
 h1,
@@ -169,9 +281,9 @@ code {
   animation: twinkle 5s ease-in-out infinite;
 }
 
-.sparkle--pink { color: #d88faa; }
-.sparkle--lavender { color: #b49be4; }
-.sparkle--milk { color: #f4dcea; }
+.sparkle--pink { color: var(--pink); }
+.sparkle--lavender { color: var(--lavender); }
+.sparkle--milk { color: var(--highlight); }
 
 @keyframes twinkle {
   0%,
@@ -197,6 +309,64 @@ code {
   100% {
     opacity: 0;
     transform: translate(-50%, -150%) rotate(calc(var(--rot, 0deg) + 90deg)) scale(1.1);
+  }
+}
+
+/* 🎋 Zen Garden — the background particles become drifting leaves */
+[data-theme="zengarden"] .sparkle {
+  clip-path: none;
+  border-radius: 0 100% 0 100%;
+  filter: none;
+}
+
+[data-theme="zengarden"] .sparkle:not(.sparkle--burst) {
+  animation-name: leafsway;
+}
+
+@keyframes leafsway {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: translate(-6px, 5px) rotate(-15deg) scale(0.9);
+  }
+  50% {
+    opacity: 0.75;
+    transform: translate(6px, -6px) rotate(22deg) scale(1.05);
+  }
+}
+
+/* 🌊 Tidal — the background particles become rising bubbles */
+[data-theme="tidal"] .sparkle {
+  clip-path: none;
+  border-radius: 50%;
+  filter: none;
+  background: radial-gradient(
+    circle at 32% 28%,
+    rgba(255, 255, 255, 0.85),
+    color-mix(in srgb, var(--pink) 35%, transparent) 55%,
+    transparent 72%
+  );
+  border: 1px solid color-mix(in srgb, var(--pink) 45%, transparent);
+}
+
+[data-theme="tidal"] .sparkle:not(.sparkle--burst) {
+  animation-name: bubble;
+}
+
+@keyframes bubble {
+  0% {
+    opacity: 0;
+    transform: translateY(16px) scale(0.6);
+  }
+  25% {
+    opacity: 0.75;
+  }
+  80% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-18px) scale(1);
   }
 }
 
@@ -348,34 +518,7 @@ code {
   gap: 0.6rem;
 }
 
-.theme-toggle {
-  display: grid;
-  place-items: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: var(--surface-2);
-  border: 1px solid var(--border);
-  color: var(--ink);
-  font-size: 1rem;
-  cursor: pointer;
-  flex-shrink: 0;
-  transition: transform 0.3s var(--ease), color 0.3s, border-color 0.3s;
-}
-
-.theme-toggle:hover {
-  transform: translateY(-2px);
-  color: var(--pink-strong);
-  border-color: var(--pink);
-}
-
-.theme-toggle i {
-  transition: transform 0.4s var(--ease);
-}
-
-.theme-toggle:hover i {
-  transform: rotate(-25deg) scale(1.1);
-}
+/* Theme picker lives at the bottom of the page (see .theme-picker) */
 
 .nav__toggle {
   display: none;
@@ -421,7 +564,7 @@ code {
   inset: 0;
   background: radial-gradient(
     28rem 28rem at var(--mx) var(--my),
-    rgba(216, 143, 170, 0.28),
+    color-mix(in srgb, var(--pink) 28%, transparent),
     transparent 70%
   );
   transition: background 0.2s linear;
@@ -1212,6 +1355,77 @@ code {
   transform: translateY(-4px);
   color: var(--pink-strong);
   border-color: var(--pink);
+}
+
+/* ==================================================================
+   THEME DOCK (fixed) — "Alter Ego" · switch any time
+   ================================================================== */
+.theme-dock {
+  position: fixed;
+  top: 4.7rem;
+  right: 0.9rem;
+  z-index: 80;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.6rem;
+  border-radius: 999px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(14px) saturate(140%);
+  box-shadow: var(--shadow);
+}
+
+.theme-dock__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: var(--muted);
+  white-space: nowrap;
+  padding-left: 0.25rem;
+}
+
+.theme-dock__label i {
+  color: var(--pink-strong);
+  font-size: 0.85rem;
+}
+
+.theme-dock__options {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.theme-dot {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  padding: 0;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35);
+  transition: transform 0.2s var(--ease), border-color 0.2s;
+}
+
+.theme-dot:hover {
+  transform: scale(1.18);
+}
+
+.theme-dot.is-active {
+  border-color: var(--ink);
+  transform: scale(1.12);
+}
+
+@media (max-width: 520px) {
+  .theme-dock {
+    top: auto;
+    bottom: 0.9rem;
+    right: 50%;
+    transform: translateX(50%);
+  }
 }
 
 /* ==================================================================

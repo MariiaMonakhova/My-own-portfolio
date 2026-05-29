@@ -1,5 +1,5 @@
 import "./styles.css";
-import { projects, skillGroups, socials, sportSlides } from "./data.ts";
+import { projects, skillGroups, socials, sportSlides, themes } from "./data.ts";
 
 /* ------------------------------------------------------------------ *
  *  Small DOM helpers
@@ -318,34 +318,61 @@ function setupSparkles(): void {
 }
 
 /* ------------------------------------------------------------------ *
- *  Dark / light theme toggle (persisted, respects system preference)
+ *  "Alter Ego" theme picker (bottom of page) — persisted in localStorage
  * ------------------------------------------------------------------ */
 function setupTheme(): void {
   const root = document.documentElement;
-  const btn = $("#theme-toggle");
-  const icon = btn?.querySelector("i");
   const meta = document.querySelector<HTMLMetaElement>('meta[name="theme-color"]');
+  const container = $("#theme-options");
+  const valid = new Set(themes.map((t) => t.key));
+  const bgFor = (key: string): string => themes.find((t) => t.key === key)?.swatch[0] ?? "#f5efe8";
 
-  const apply = (theme: "light" | "dark"): void => {
-    root.setAttribute("data-theme", theme);
-    if (icon) icon.className = theme === "dark" ? "fa-solid fa-sun" : "fa-solid fa-moon";
-    btn?.setAttribute("aria-label", theme === "dark" ? "Switch to light theme" : "Switch to dark theme");
-    if (meta) meta.content = theme === "dark" ? "#0f0b16" : "#f5efe8";
+  const apply = (key: string): void => {
+    root.setAttribute("data-theme", key);
+    if (meta) meta.content = bgFor(key);
+    container?.querySelectorAll<HTMLElement>(".theme-dot").forEach((b) => {
+      const active = b.dataset.themeKey === key;
+      b.classList.toggle("is-active", active);
+      b.setAttribute("aria-pressed", String(active));
+    });
   };
 
-  // The inline <head> script already set data-theme before paint; mirror it.
-  const current = root.getAttribute("data-theme") === "dark" ? "dark" : "light";
-  apply(current);
-
-  btn?.addEventListener("click", () => {
-    const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
-    try {
-      localStorage.setItem("theme", next);
-    } catch {
-      /* ignore storage errors (private mode) */
-    }
-    apply(next);
+  // Render a compact dot per theme into the fixed dock.
+  themes.forEach((t) => {
+    const b = el("button", "theme-dot");
+    b.type = "button";
+    b.dataset.themeKey = t.key;
+    b.title = `${t.emoji} ${t.name}`;
+    b.setAttribute("aria-label", t.name);
+    b.setAttribute("aria-pressed", "false");
+    b.style.background = `linear-gradient(135deg, ${t.swatch[1]} 0%, ${t.swatch[2]} 100%)`;
+    b.addEventListener("click", () => {
+      try {
+        localStorage.setItem("theme", t.key);
+      } catch {
+        /* ignore storage errors (private mode) */
+      }
+      apply(t.key);
+    });
+    container?.appendChild(b);
   });
+
+  // The inline <head> script set data-theme before paint; honour it / storage.
+  const fromAttr = root.getAttribute("data-theme");
+  const stored = (() => {
+    try {
+      return localStorage.getItem("theme");
+    } catch {
+      return null;
+    }
+  })();
+  const initial =
+    stored && valid.has(stored)
+      ? stored
+      : fromAttr && valid.has(fromAttr)
+        ? fromAttr
+        : "daydream";
+  apply(initial);
 }
 
 /* ------------------------------------------------------------------ *

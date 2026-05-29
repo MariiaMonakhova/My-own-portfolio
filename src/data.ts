@@ -283,3 +283,45 @@ export const socials: SocialLink[] = [
     icon: "fa-solid fa-link",
   },
 ];
+
+export interface ThemeOption {
+  /** Matches the [data-theme="key"] block in styles.css */
+  key: string;
+  name: string;
+  emoji: string;
+  /** Three preview colours: [background, accent, accent-2] */
+  swatch: [string, string, string];
+}
+
+export const themes: ThemeOption[] = [
+  {
+    key: "daydream",
+    name: "Daydream",
+    emoji: "🌸",
+    swatch: ["#f5efe8", "#d88faa", "#a98fd6"],
+  },
+  {
+    key: "midnight",
+    name: "Midnight",
+    emoji: "🌙",
+    swatch: ["#0f0b16", "#c89bd6", "#b69ce6"],
+  },
+  {
+    key: "femmefatale",
+    name: "Femme Fatale",
+    emoji: "🍷",
+    swatch: ["#1a0a0e", "#e2566a", "#a8324e"],
+  },
+  {
+    key: "tidal",
+    name: "Tidal",
+    emoji: "🌊",
+    swatch: ["#e9f5f6", "#2bb6c4", "#4f8fd6"],
+  },
+  {
+    key: "zengarden",
+    name: "Zen Garden",
+    emoji: "🎋",
+    swatch: ["#f1f0e7", "#7a9b6e", "#c0895e"],
+  },
+];

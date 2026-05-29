@@ -9,16 +9,22 @@
     />
     <meta name="theme-color" content="#f5efe8" />
 
-    <!-- Apply saved/system theme before paint to avoid a flash -->
+    <!-- Apply saved theme before paint to avoid a flash -->
     <script>
       (function () {
         try {
-          var t =
-            localStorage.getItem("theme") ||
-            (window.matchMedia("(prefers-color-scheme: dark)").matches
-              ? "dark"
-              : "light");
-          document.documentElement.setAttribute("data-theme", t);
+          var valid = {
+            daydream: 1,
+            midnight: 1,
+            femmefatale: 1,
+            tidal: 1,
+            zengarden: 1,
+          };
+          var s = localStorage.getItem("theme");
+          document.documentElement.setAttribute(
+            "data-theme",
+            s && valid[s] ? s : "daydream",
+          );
         } catch (e) {}
       })();
     </script>
@@ -60,15 +66,6 @@
           </ul>
 
           <button
-            id="theme-toggle"
-            class="theme-toggle"
-            aria-label="Switch theme"
-            title="Switch theme"
-          >
-            <i class="fa-solid fa-moon"></i>
-          </button>
-
-          <button
             id="menu-toggle"
             class="nav__toggle"
             aria-label="Toggle menu"
@@ -79,6 +76,12 @@
         </div>
       </div>
     </nav>
+
+    <!-- ===================== ALTER EGO / THEME DOCK (fixed) ===================== -->
+    <div id="theme-dock" class="theme-dock" role="group" aria-label="Pick a vibe">
+      <span class="theme-dock__label">Pick a vibe ✨</span>
+      <div id="theme-options" class="theme-dock__options"></div>
+    </div>
 
     <!-- ===================== HERO ===================== -->
     <header id="hero" class="hero">
