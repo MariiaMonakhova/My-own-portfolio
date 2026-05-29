@@ -1,0 +1,17 @@
+{
+  "name": "mariia-monakhova-portfolio",
+  "version": "2.0.0",
+  "description": "Personal portfolio of Mariia Monakhova — AI & Full-Stack Engineer",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "bun ./index.html",
+    "build": "bun build ./index.html --outdir dist --minify --sourcemap=none",
+    "preview": "bun run build && bunx serve dist",
+    "typecheck": "bunx tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0",
+    "@types/bun": "latest"
+  }
+}

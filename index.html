@@ -1,254 +1,341 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Mariia is a Full-Stack Engineer from Ukraine. Specializes on designing websites using Figma and then convert it into code."
+      content="Mariia Monakhova — AI & Full-Stack Engineer from Ukraine. Building with AI agents, MCP, TypeScript and React. Also into tennis, yoga and coaching."
     />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous"
-    />
+    <meta name="theme-color" content="#f5efe8" />
+
+    <!-- Apply saved/system theme before paint to avoid a flash -->
+    <script>
+      (function () {
+        try {
+          var t =
+            localStorage.getItem("theme") ||
+            (window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light");
+          document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@600&family=Taviraj&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="src/styles.css" />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-      crossorigin="anonymous"
-    ></script>
     <script
       src="https://kit.fontawesome.com/122489e1ff.js"
       crossorigin="anonymous"
     ></script>
 
-    <title>Mariia Monakhova - Full-stack Developer</title>
+    <title>Mariia Monakhova — AI & Full-Stack Engineer</title>
+
+    <script type="module" src="./src/main.ts"></script>
   </head>
   <body>
-    <nav>
-      <div class="container container-sec">
-        <a href="index.html" title="Go to Homepage"
-          ><img src="images/logo.png" alt="Mariia Logo" class="logo d-block"
-        /></a>
-        <ul>
-          <li>
-            <a href="index.html" title="Homepage" class="active-link">Home</a>
-          </li>
-          <li>
-            <a href="about.html" title="About page">About</a>
-          </li>
-          <li>
-            <a href="projects.html" title="Projects Page">Projects</a>
-          </li>
-          <li>
-            <a href="contact.html" title="Contact Page">Contact</a>
-          </li>
-        </ul>
+    <div id="scroll-progress" class="scroll-progress"></div>
+
+    <!-- ===================== NAV ===================== -->
+    <nav id="nav" class="nav">
+      <div class="nav__inner">
+        <a href="#hero" class="nav__brand" title="Back to top">
+          <span class="nav__mark">M</span>
+          <span class="nav__name">Mariia Monakhova</span>
+        </a>
+
+        <div class="nav__right">
+          <ul id="nav-links" class="nav__links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#ai">AI Work</a></li>
+            <li><a href="#beyond">Beyond Code</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact" class="nav__cta">Let's talk</a></li>
+          </ul>
+
+          <button
+            id="theme-toggle"
+            class="theme-toggle"
+            aria-label="Switch theme"
+            title="Switch theme"
+          >
+            <i class="fa-solid fa-moon"></i>
+          </button>
+
+          <button
+            id="menu-toggle"
+            class="nav__toggle"
+            aria-label="Toggle menu"
+            aria-expanded="false"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </div>
       </div>
     </nav>
-    <div class="hero">
-      <p class="hi-text">Hi, I am</p>
-      <h1>Mariia Monakhova</h1>
-      <p class="mb-5 full-stack-text">Full-Stack developer, based in Ukraine</p>
-      <a
-        href="contact.html"
-        class="btn btn-branding main-page-button"
-        title="Contact Mariia"
-        >Contact me</a
-      >
-    </div>
-    <h3 class="text-center m-5 join-text">Take a look on all of my projects</h3>
-    <main class="container">
-      <section class="row mb-5">
-        <div class="col-md-6">
-          <img
-                  src="images/weatherV.png"
-                  alt="weather project"
-                  class="img-fluid"
-          />
+
+    <!-- ===================== HERO ===================== -->
+    <header id="hero" class="hero">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="hero__content">
+        <p class="hero__hi reveal"><span class="dot"></span> Hi, I'm</p>
+        <h1 class="hero__name reveal">Mariia Monakhova</h1>
+        <p class="hero__role reveal">
+          <span class="grad">AI &amp; Full-Stack Engineer</span>
+        </p>
+        <p class="hero__tag reveal">
+          I build intelligent products — from AI agents, MCP and prompt systems
+          to fast, well-architected web apps. Based in Ukraine 🇺🇦
+        </p>
+        <div class="hero__actions reveal">
+          <a href="#projects" class="btn btn--primary">View my work</a>
+          <a href="#contact" class="btn btn--ghost">Get in touch</a>
         </div>
-        <div class="col">
-          <div class="project-description">
-            <h2 class="project-heading">Weather App Project</h2>
-            <p class="mb-4 text-muted">
-              I built a weather app using more advanced
-              languages. In addition to that I got skills in Bootstrap, API,
-              hosting, real-life workflow and advanced JavaScript, HTML and
-              CSS. You can watch your location weather forecast.
-            </p>
-            <a
-              href="projects.html"
-              title="Open Weather App"
-              class="btn btn-main-button mb-4"
-              >Learn More</a
-            >
-          </div>
+        <div class="hero__socials reveal" data-socials></div>
+      </div>
+      <a href="#about" class="hero__scroll" aria-label="Scroll down">
+        <span class="mouse"><span></span></span>
+        Scroll
+      </a>
+    </header>
+
+    <main>
+      <!-- ===================== ABOUT ===================== -->
+      <section id="about" class="section about">
+        <div class="section__head reveal">
+          <span class="eyebrow">01 — About</span>
+          <h2>A bit about me</h2>
         </div>
-      </section>
-      <section class="row mb-5">
-        <div class="col-md-6 order-md-2 order-1">
-          <img
-            src="images/dictionary.png"
-            alt="dictionary react project"
-            class="img-fluid"
-          />
-        </div>
-        <div class="col order-md-1 order-2">
-          <div class="project-description project-description-dictionary">
-            <h2 class="project-heading">Dictionary App Project</h2>
-            <p class="mb-4 text-muted">
-              My first React Project. This dictionary was built with all
-              necessary attributes for React app. I got skills in Terminal and
-              I used extra API for pictures.
-            </p>
-            <a
-              href="projects.html"
-              title="Open Dictionary Project"
-              class="btn btn-main-button"
-              >Learn More</a
-            >
-          </div>
-        </div>
-      </section>
-      <section class="row mb-5">
-        <div class="col-md-6">
-          <img
-                  src="images/weather.png"
-                  alt="weather react project"
-                  class="img-fluid"
-          />
-        </div>
-        <div class="col">
-          <div class="project-description project-description-weather">
-            <h2 class="project-heading">Weather App Project</h2>
-            <p class="mb-4 text-muted">
-              This is an updated Weather App React Project. This application was built with all
-              necessary attributes for React app. In addition, I learned some advanced CSS skills.
-            </p>
-            <a
-                    href="projects.html"
-                    title="Open Weather Project"
-                    class="btn btn-main-button"
-            >Learn More</a
-            >
-          </div>
-        </div>
-        </section>
-      <section class="row mb-5">
-        <div class="col-md-6 order-md-2 order-1">
-          <img
-            src="images/todo.png"
-            alt="todo react project"
-            class="img-fluid"
-          />
-        </div>
-        <div class="col order-md-1 order-2">
-          <div class="project-description project-description-todo">
-            <h2 class="project-heading">Todo App Project</h2>
-            <p class="mb-4 text-muted">
-              This app was created using React with TypeScript. To save users todos I used localStorage.
-              The app represents a basic model of simple Todo App, where you can create, delete, toggle and edit todos
-            </p>
-            <a
-              href="projects.html"
-              title="Open Todo Project"
-              class="btn btn-main-button"
-              >Learn More</a
-            >
-          </div>
-        </div>
-      </section>
-      <section class="row mb-5">
-        <div class="col-md-6">
-          <div class="project-image">
+        <div class="about__grid">
+          <div class="about__photo reveal">
             <img
-                    src="images/mat.png"
-                    alt="museum landing page"
-                    class="img-fluid"
+              src="images/avatar.jpg"
+              alt="Mariia Monakhova"
+              loading="lazy"
             />
+            <div class="about__photo-glow" aria-hidden="true"></div>
+          </div>
+          <div class="about__text reveal">
+            <p>
+              I'm a Full-Stack &amp; AI Engineer who loves turning fuzzy ideas
+              into clean, shippable products. I work across the stack — Python,
+              TypeScript, React, Next.js and Nest.js — and I'm deep into the AI
+              space: building with the <strong>Model Context Protocol</strong>,
+              the <strong>Claude Agent SDK</strong>, prompt engineering and
+              automation.
+            </p>
+            <p>
+              I care about good architecture, fast feedback loops and finding
+              the real problem before writing a line of code. I also run tech
+              interviews and enjoy helping engineers level up.
+            </p>
+            <p>
+              Away from the keyboard you'll find me on a tennis court or a yoga
+              mat — and often <strong>coaching</strong> both. Sport taught me
+              the discipline, patience and calm I bring to engineering.
+            </p>
+            <ul class="about__stats">
+              <li>
+                <span class="num">3+</span
+                ><span class="lbl">Years building</span>
+              </li>
+              <li>
+                <span class="num">AI</span
+                ><span class="lbl">Agents &amp; MCP</span>
+              </li>
+              <li>
+                <span class="num">2</span
+                ><span class="lbl">Sports I coach</span>
+              </li>
+            </ul>
           </div>
         </div>
-        <div class="col">
-          <div class="project-description project-description-landing">
-            <h2 class="project-heading">MAT Museum Landing Page</h2>
-            <p class="mb-4 text-muted">
-              I created this landing page according to the design.
-              I used such technologies as HTML, SCSS, BEM, form and link handling, grid, flexbox.
+      </section>
+
+      <!-- ===================== SKILLS ===================== -->
+      <section id="skills" class="section skills">
+        <div class="section__head reveal">
+          <span class="eyebrow">02 — Skills</span>
+          <h2>What I work with</h2>
+          <p class="section__sub">
+            A toolkit spanning AI engineering, full-stack development, cloud and
+            the craft around shipping software.
+          </p>
+        </div>
+        <div id="skills-grid" class="skills-grid"></div>
+      </section>
+
+      <!-- ===================== AI WORK ===================== -->
+      <section id="ai" class="section ai">
+        <div class="section__head reveal">
+          <span class="eyebrow">03 — AI Work</span>
+          <h2>Building with AI</h2>
+          <p class="section__sub">
+            Day to day I build AI-agent infrastructure on Claude and the Model
+            Context Protocol. A high-level look at the kind of things I ship.
+          </p>
+        </div>
+        <div class="ai-grid">
+          <article class="ai-card reveal">
+            <span class="ai-card__icon"
+              ><i class="fa-solid fa-flask-vial"></i
+            ></span>
+            <h3>A/B Test &amp; Feature-Flag MCP</h3>
+            <p>
+              MCP servers that let AI agents safely read and manage feature
+              flags and experiments — rollouts and A/B tests an agent can reason
+              about.
             </p>
-            <a
-              href="projects.html"
-              title="Open Landing Page"
-              class="btn btn-main-button"
-              >Learn More</a
-            >
+            <ul class="ai-card__tags">
+              <li>MCP</li>
+              <li>Feature Flags</li>
+              <li>A/B Testing</li>
+            </ul>
+          </article>
+
+          <article class="ai-card reveal">
+            <span class="ai-card__icon"
+              ><i class="fa-solid fa-pen-ruler"></i
+            ></span>
+            <h3>CMS MCP for Claude</h3>
+            <p>
+              An MCP server that exposes a content management system to Claude,
+              so structured content can be created and edited through natural
+              language.
+            </p>
+            <ul class="ai-card__tags">
+              <li>MCP</li>
+              <li>CMS</li>
+              <li>Claude</li>
+            </ul>
+          </article>
+
+          <article class="ai-card reveal">
+            <span class="ai-card__icon"
+              ><i class="fa-solid fa-shield-halved"></i
+            ></span>
+            <h3>Authentication for MCP &amp; Agents</h3>
+            <p>
+              Authentication and scoped access control for MCP servers and
+              agents, so they only ever act with the permissions they should
+              have.
+            </p>
+            <ul class="ai-card__tags">
+              <li>Auth</li>
+              <li>Security</li>
+              <li>Agents</li>
+            </ul>
+          </article>
+
+          <article class="ai-card reveal">
+            <span class="ai-card__icon"><i class="fa-solid fa-robot"></i></span>
+            <h3>Agent Tooling &amp; Automation</h3>
+            <p>
+              Tools, skills and automations on the Claude Agent SDK — plus the
+              prompt systems that keep agents reliable and repeatable.
+            </p>
+            <ul class="ai-card__tags">
+              <li>Claude Agent SDK</li>
+              <li>Automation</li>
+              <li>Prompts</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===================== BEYOND CODE / CAROUSEL ===================== -->
+      <section id="beyond" class="section beyond">
+        <div class="section__head reveal">
+          <span class="eyebrow">04 — Beyond Code</span>
+          <h2>Tennis, yoga &amp; coaching</h2>
+          <p class="section__sub">
+            The parts of me that don't fit in a commit. Swipe through 👇
+          </p>
+        </div>
+
+        <div class="carousel reveal">
+          <div
+            id="carousel-viewport"
+            class="carousel__viewport"
+            tabindex="0"
+            aria-label="Photo carousel"
+          >
+            <div id="carousel-track" class="carousel__track"></div>
           </div>
+          <button
+            id="carousel-prev"
+            class="carousel__btn carousel__btn--prev"
+            aria-label="Previous"
+          >
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <button
+            id="carousel-next"
+            class="carousel__btn carousel__btn--next"
+            aria-label="Next"
+          >
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+          <div id="carousel-dots" class="carousel__dots"></div>
+        </div>
+        <p class="beyond__hint reveal">
+          <i class="fa-solid fa-camera"></i>
+          A few favourite moments — on the court and on the mat.
+        </p>
+      </section>
+
+      <!-- ===================== PROJECTS ===================== -->
+      <section id="projects" class="section projects">
+        <div class="section__head reveal">
+          <span class="eyebrow">05 — Projects</span>
+          <h2>First projects of my career</h2>
+          <p class="section__sub">A few things I've built at the start.</p>
+        </div>
+        <div id="projects-grid" class="projects-grid"></div>
+      </section>
+
+      <!-- ===================== CONTACT ===================== -->
+      <section id="contact" class="section contact">
+        <div class="contact__card reveal">
+          <span class="eyebrow">06 — Contact</span>
+          <h2>Let's build something together</h2>
+          <p>
+            Open to new opportunities and interesting problems. The fastest way
+            to reach me is email.
+          </p>
+          <a
+            class="btn btn--primary contact__email"
+            href="mailto:mariia.monakhova.dev@gmail.com"
+          >
+            <i class="fa-solid fa-paper-plane"></i>
+            <span class="contact__email-full"
+              >mariia.monakhova.dev@gmail.com</span
+            >
+            <span class="contact__email-short">Email me</span>
+          </a>
+          <div class="contact__socials" data-socials></div>
         </div>
       </section>
     </main>
 
-    <footer class="container mt-5">
-      <div class="contact-box mb-5 mt-5">
-        <div class="row">
-          <div class="col-md-10">
-            <h1>Let's work together</h1>
-          </div>
-          <div class="col-md-2">
-            <a
-                    href="contact.html"
-                    title="Contact Mariia"
-                    class="btn btn-branding main-page-button"
-            >Contact me</a
-            >
-          </div>
-        </div>
-      </div>
-      <div class="mail">
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer">
+      <p>
+        Designed &amp; coded by Mariia Monakhova — built with Bun + TypeScript.
         <a
-                href="mailto:mariia.monakhova.dev@gmail.com"
-                target="_blank"
-                class="email-link"
-                title="Email Mariia"
-        >mariia.monakhova.dev@gmail.com</a
-        >
-      </div>
-      <div class="icons">
-        <a
-                href="https://www.instagram.com/ma_mamariia/"
-                target="_blank"
-                title="Go to Instagram"
-        ><i class="fa-brands fa-instagram"></i
-        ></a>
-        <a
-                href="https://github.com/MariiaMonakhova"
-                target="_blank"
-                title="Go to GitHub"
-        ><i class="fa-brands fa-github"></i
-        ></a>
-        <a
-                href="https://www.linkedin.com/in/mariia-monakhova-49948a283/"
-                target="_blank"
-                title="Go to LinkedIn"
-        ><i class="fa-brands fa-linkedin"></i
-        ></a>
-      </div>
-      <p class="text-center mt-5 mb-3">
-        This website was coded by Mariia Monakhova, and is
-        <a
-                href="https://github.com/MariiaMonakhova/My-own-portfolio"
-                target="_blank"
-                title="Go to code"
-        >open-sourced</a
-        >
+          href="https://github.com/MariiaMonakhova/My-own-portfolio"
+          target="_blank"
+          rel="noopener"
+          >Open-sourced</a
+        >.
       </p>
+      <p class="footer__copy">© <span id="year"></span> Mariia Monakhova</p>
     </footer>
   </body>
 </html>

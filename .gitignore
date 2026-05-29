@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.bun/
+bun.lockb
+*.log
+.DS_Store
+.cache/
