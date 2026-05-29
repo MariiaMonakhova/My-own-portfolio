@@ -1,6 +1,11 @@
 import "./styles.css";
 import { projects, skillGroups, socials, sportSlides, themes } from "./data.ts";
 
+// Per-theme "About" portraits
+import avatarDefault from "../images/avatar.jpg";
+import avatarFatale from "../images/avatar-fatale.jpg";
+import avatarWater from "../images/avatar-water.jpg";
+
 /* ------------------------------------------------------------------ *
  *  Small DOM helpers
  * ------------------------------------------------------------------ */
@@ -359,10 +364,15 @@ function setupTheme(): void {
     document.head.appendChild(link);
   };
 
+  const photo = $<HTMLImageElement>(".about__photo img");
+  const avatarFor = (key: string): string =>
+    key === "femmefatale" ? avatarFatale : key === "tidal" ? avatarWater : avatarDefault;
+
   const apply = (key: string): void => {
     root.setAttribute("data-theme", key);
     if (meta) meta.content = bgFor(key);
     setFavicon(faviconHref(key));
+    if (photo) photo.src = avatarFor(key);
     container?.querySelectorAll<HTMLElement>(".theme-dot").forEach((b) => {
       const active = b.dataset.themeKey === key;
       b.classList.toggle("is-active", active);

@@ -17,6 +17,7 @@ import tennis1 from "../images/sports/tennis-1.jpg";
 import tennis2 from "../images/sports/tennis-2.jpg";
 import tennis3 from "../images/sports/tennis-3.jpg";
 import yoga1 from "../images/sports/yoga-1.jpg";
+import yoga3 from "../images/sports/yoga-3.jpg";
 import yoga4 from "../images/sports/yoga-4.jpg";
 import yoga5 from "../images/sports/yoga-5.jpg";
 import yoga6 from "../images/sports/yoga-6.jpg";
@@ -184,7 +185,7 @@ export interface SportSlide {
   /** Font Awesome icon shown on the slide / fallback */
   icon: string;
   /** Drop your photos into images/sports/ to replace the placeholders */
-  image: string | null;
+  image: string;
 }
 
 export const sportSlides: SportSlide[] = [
@@ -210,13 +211,6 @@ export const sportSlides: SportSlide[] = [
     image: tennis2,
   },
   {
-    title: "Flow",
-    caption:
-      "Finding stillness in movement — the practice that resets my mind between deep-work sessions.",
-    icon: "fa-solid fa-spa",
-    image: null,
-  },
-  {
     title: "Coaching Tennis",
     caption:
       "I coach tennis and love helping people break their game down into small, winnable steps.",
@@ -228,7 +222,7 @@ export const sportSlides: SportSlide[] = [
     caption:
       "Strength, breath and balance — yoga is where I recharge the energy I bring to building.",
     icon: "fa-solid fa-spa",
-    image: null,
+    image: yoga3,
   },
   {
     title: "Practice",
@@ -263,7 +257,7 @@ export const socials: SocialLink[] = [
   {
     label: "Instagram",
     href: "https://www.instagram.com/ma_mamariia/",
-    icon: "fa-brands fa-instagram",
+    icon: "fa-brands fa-square-instagram",
   },
   {
     label: "GitHub",
