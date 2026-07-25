@@ -1,5 +1,5 @@
 import "./styles.css";
-import { projects, skillGroups, socials, sportSlides, themes } from "./data.ts";
+import { projects, recentProjects, skillGroups, socials, sportSlides, themes } from "./data.ts";
 
 // Per-theme "About" portraits
 import avatarDefault from "../images/avatar.jpg";
@@ -56,11 +56,11 @@ function renderSkills(): void {
 /* ------------------------------------------------------------------ *
  *  Render: projects
  * ------------------------------------------------------------------ */
-function renderProjects(): void {
-  const grid = $("#projects-grid");
+function renderProjectGrid(selector: string, list: typeof projects): void {
+  const grid = $(selector);
   if (!grid) return;
 
-  projects.forEach((p, i) => {
+  list.forEach((p, i) => {
     const card = el("article", "project-card reveal");
     card.style.setProperty("--delay", `${i * 80}ms`);
     card.innerHTML = `
@@ -424,7 +424,8 @@ function setupTheme(): void {
 function main(): void {
   setupTheme();
   renderSkills();
-  renderProjects();
+  renderProjectGrid("#recent-projects-grid", recentProjects);
+  renderProjectGrid("#projects-grid", projects);
   renderSocials();
   setupCarousel();
   setupReveal();

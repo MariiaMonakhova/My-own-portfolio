@@ -11,6 +11,7 @@ import dictionaryImg from "../images/dictionary.png";
 import weatherImg from "../images/weather.png";
 import todoImg from "../images/todo.png";
 import matImg from "../images/mat.png";
+import botScreenshot2 from "../images/bot_screenshot_2.png";
 
 // Sports photos
 import tennis1 from "../images/sports/tennis-1.jpg";
@@ -176,6 +177,17 @@ export const projects: Project[] = [
     tags: ["HTML", "SCSS", "BEM"],
     image: matImg,
     link: "https://mariiamonakhova.github.io/MAT_landing-page/",
+  },
+];
+
+export const recentProjects: Project[] = [
+  {
+    title: "AI Agent Telegram",
+    description:
+      "A Telegram bot powered by an AI agent built with Python and the Claude model, deployed on Heroku.",
+    tags: ["Python", "AI Agent", "Telegram", "Claude", "Heroku"],
+    image: botScreenshot2,
+    link: "https://github.com/MariiaMonakhova/ai_agent_telegram",
   },
 ];
 
