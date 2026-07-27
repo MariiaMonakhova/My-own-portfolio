@@ -12,6 +12,7 @@ import weatherImg from "../images/weather.png";
 import todoImg from "../images/todo.png";
 import matImg from "../images/mat.png";
 import botScreenshot2 from "../images/bot_screenshot_2.png";
+import support1Img from "../images/support_1.png";
 
 // Sports photos
 import tennis1 from "../images/sports/tennis-1.jpg";
@@ -188,6 +189,14 @@ export const recentProjects: Project[] = [
     tags: ["Python", "AI Agent", "Telegram", "Claude", "Heroku"],
     image: botScreenshot2,
     link: "https://github.com/MariiaMonakhova/ai_agent_telegram",
+  },
+  {
+    title: "Customer Support Bot",
+    description:
+      "Built AI customer support bot with multi-step LangGraph workflows. Handles 1000+ messages/day on AWS Lambda free tier. Tech: Claude API, LangGraph, Telegram Bot API, AWS Lambda",
+    tags: ["Claude API", "LangGraph", "Telegram Bot API", "AWS Lambda"],
+    image: support1Img,
+    link: "https://github.com/MariiaMonakhova/customer-support-bot",
   },
 ];
 
