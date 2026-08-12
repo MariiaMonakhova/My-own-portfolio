@@ -13,6 +13,7 @@ import todoImg from "../images/todo.png";
 import matImg from "../images/mat.png";
 import botScreenshot2 from "../images/bot_screenshot_2.png";
 import support1Img from "../images/support_1.png";
+import meetingIntelImg from "../images/meeting-intel-project.png";
 
 // Sports photos
 import tennis1 from "../images/sports/tennis-1.jpg";
@@ -63,6 +64,18 @@ export const skillGroups: SkillGroup[] = [
       { name: "Claude Agent SDK", icon: "fa-solid fa-diagram-project" },
       { name: "Claude Skills", icon: "fa-solid fa-puzzle-piece" },
       { name: "Cursor AI", icon: "fa-solid fa-i-cursor" },
+      {
+        name: "Claude API (Structured Outputs / Tool Use)",
+        icon: "fa-solid fa-message",
+        featured: true,
+      },
+      {
+        name: "Retrieval-Augmented Generation (RAG)",
+        icon: "fa-solid fa-database",
+        featured: true,
+      },
+      { name: "MapReduce Pipelines", icon: "fa-solid fa-code-branch" },
+      { name: "LLM Evaluation", icon: "fa-solid fa-clipboard-check" },
     ],
   },
   {
@@ -78,6 +91,8 @@ export const skillGroups: SkillGroup[] = [
       { name: "React.js", icon: "fa-brands fa-react", featured: true },
       { name: "Next.js", icon: "fa-solid fa-layer-group" },
       { name: "Nest.js", icon: "fa-solid fa-cube" },
+      { name: "Streamlit", icon: "fa-solid fa-window-maximize" },
+      { name: "Pydantic", icon: "fa-solid fa-shield-halved" },
     ],
   },
   {
@@ -182,6 +197,23 @@ export const projects: Project[] = [
 ];
 
 export const recentProjects: Project[] = [
+  {
+    title: "Meeting Intel",
+    description:
+      "AI-powered meeting intelligence platform. Upload a transcript (txt/docx/pdf) and a MapReduce pipeline over Claude — parallel per-chunk extraction, then a structured merge/dedupe pass — pulls out action items, decisions and sentiment, cross-references past meetings via RAG, and scores extraction quality against human-labeled ground truth. Deployed as a Streamlit app where every visitor brings their own Claude API key.",
+    tags: [
+      "Claude API",
+      "MapReduce",
+      "RAG",
+      "Structured Outputs",
+      "LLM Evaluation",
+      "Streamlit",
+      "Python",
+      "Pydantic",
+    ],
+    image: meetingIntelImg,
+    link: "https://meeting-intel-3mnttwg7htqhfil96derfu.streamlit.app/",
+  },
   {
     title: "AI Agent Telegram",
     description:
