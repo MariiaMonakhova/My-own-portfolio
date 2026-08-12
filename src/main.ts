@@ -32,7 +32,7 @@ function renderSkills(): void {
 
   skillGroups.forEach((group, gi) => {
     const card = el("article", "skill-card reveal");
-    card.style.setProperty("--delay", `${gi * 70}ms`);
+    card.style.setProperty("--delay", `${Math.min(gi, 4) * 40}ms`);
 
     const header = el(
       "header",
@@ -62,7 +62,7 @@ function renderProjectGrid(selector: string, list: typeof projects): void {
 
   list.forEach((p, i) => {
     const card = el("article", "project-card reveal");
-    card.style.setProperty("--delay", `${i * 80}ms`);
+    card.style.setProperty("--delay", `${Math.min(i, 4) * 40}ms`);
     card.innerHTML = `
       <a class="project-card__media" href="${p.link}" target="_blank" rel="noopener" title="Open ${p.title}">
         <img src="${p.image}" alt="${p.title}" loading="lazy" />
@@ -185,29 +185,6 @@ function setupCarousel(): void {
 
   update();
   restart();
-}
-
-/* ------------------------------------------------------------------ *
- *  Scroll reveal animations
- * ------------------------------------------------------------------ */
-function setupReveal(): void {
-  const targets = document.querySelectorAll<HTMLElement>(".reveal, [data-reveal]");
-  if (!("IntersectionObserver" in window)) {
-    targets.forEach((t) => t.classList.add("is-visible"));
-    return;
-  }
-  const io = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          io.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
-  );
-  targets.forEach((t) => io.observe(t));
 }
 
 /* ------------------------------------------------------------------ *
@@ -416,6 +393,29 @@ function setupTheme(): void {
         ? fromAttr
         : "daydream";
   apply(initial);
+}
+
+/* ------------------------------------------------------------------ *
+ *  Scroll reveal animations
+ * ------------------------------------------------------------------ */
+function setupReveal(): void {
+  const targets = document.querySelectorAll<HTMLElement>(".reveal, [data-reveal]");
+  if (!("IntersectionObserver" in window)) {
+    targets.forEach((t) => t.classList.add("is-visible"));
+    return;
+  }
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          io.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15, rootMargin: "0px 0px -15% 0px" },
+  );
+  targets.forEach((t) => io.observe(t));
 }
 
 /* ------------------------------------------------------------------ *
