@@ -1462,13 +1462,42 @@ code {
 .reveal {
   opacity: 0;
   transform: translateY(22px);
-  transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
-  transition-delay: var(--delay, 0ms);
+  transition: opacity 0.2s var(--ease), transform 0.2s var(--ease);
 }
 
 .reveal.is-visible {
   opacity: 1;
   transform: none;
+}
+
+/* Browsers that support scroll-driven animations get a reveal that's
+   directly tied to scroll position instead of a fixed-duration transition
+   fired after the fact — so it never reads as "waiting". */
+@supports (animation-timeline: view()) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: none;
+    animation: reveal-in linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+  }
+
+  .reveal.is-visible {
+    opacity: revert;
+    transform: revert;
+  }
+}
+
+@keyframes reveal-in {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /* ==================================================================

@@ -399,6 +399,10 @@ function setupTheme(): void {
  *  Scroll reveal animations
  * ------------------------------------------------------------------ */
 function setupReveal(): void {
+  // Modern browsers animate .reveal purely via CSS scroll-driven animation
+  // (see styles.css) — no JS needed, and no fixed-duration wait after a trigger.
+  if (typeof CSS !== "undefined" && CSS.supports?.("animation-timeline: view()")) return;
+
   const targets = document.querySelectorAll<HTMLElement>(".reveal, [data-reveal]");
   if (!("IntersectionObserver" in window)) {
     targets.forEach((t) => t.classList.add("is-visible"));

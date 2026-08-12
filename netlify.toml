@@ -8,6 +8,8 @@
 [build.environment]
   # Pin Bun so local and Netlify builds match.
   BUN_VERSION = "1.3.14"
+  # Netlify's build image defaults to Node 16; pin to 22 to silence the warning.
+  NODE_VERSION = "22"
 
 # Hashed assets (Bun adds a content hash to filenames) can be cached forever.
 [[headers]]
